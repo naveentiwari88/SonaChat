@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SonaChat.GrpcService/SonaChat.GrpcService.csproj" />
+    <Project Path="src/SonaChat.Web/SonaChat.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SonaChat.GrpcService.Tests/SonaChat.GrpcService.Tests.csproj" />
+  </Folder>
+  <Project Path="SonaChat/SonaChat.csproj" />
+</Solution>

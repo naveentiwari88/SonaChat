@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "SonaChat.Protos";
+package sonachat;
+
+message ChatMessage {
+  string user = 1;
+  string text = 2;
+  int64 timestamp = 3; // unix ms
+}
+
+service Chat {
+  // Bidirectional streaming: client sends ChatMessage, server broadcasts ChatMessage
+  rpc Connect(stream ChatMessage) returns (stream ChatMessage);
+}

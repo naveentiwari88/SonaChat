@@ -1,0 +1,129 @@
+@page "/"
+@using Microsoft.AspNetCore.Components.Web
+@inject SonaChat.Web.Services.GrpcChatClient ChatClient
+
+<h3>SonaChat</h3>
+
+<div>
+    <label>Username: </label>
+    <input @bind="User" />
+    <button @onclick="Connect" disabled="@(IsConnected || IsConnecting)">@(IsConnected ? "Connected" : IsConnecting ? "Connecting..." : "Connect")</button>
+    <span style="margin-left:12px;color:#666">@StatusMessage</span>
+</div>
+
+<div style="margin-top:12px">
+    <div style="height:300px; overflow:auto; border:1px solid #ccc; padding:8px">
+        @foreach (var m in Messages)
+        {
+            <div><b>@m.User</b>: @m.Text <small style="color:#666">@DateTimeOffset.FromUnixTimeMilliseconds(m.Timestamp).ToLocalTime()</small></div>
+        }
+    </div>
+
+    <div style="margin-top:8px; display:flex; align-items:center; gap:8px">
+        <input style="flex:1" @bind="CurrentText" @onkeypress="HandleKey" disabled="@(IsConnecting || IsSending)" placeholder="Type a message..." />
+        <button @onclick="Send" disabled="@(IsConnecting || IsSending)">Send</button>
+        @if (IsSending)
+        {
+            <span style="color:#0078d4">Sending...</span>
+        }
+    </div>
+</div>
+
+@code {
+    private string User { get; set; } = "User" + new Random().Next(1000, 9999);
+    private string CurrentText { get; set; } = string.Empty;
+    private List<SonaChat.Protos.ChatMessage> Messages { get; } = new();
+    private CancellationTokenSource? _cts;
+    private bool IsConnecting { get; set; }
+    private bool IsSending { get; set; }
+    private bool IsConnected => _cts != null;
+    private string StatusMessage => IsConnected ? "Connected" : IsConnecting ? "Connecting..." : "Disconnected";
+
+    private async Task Connect()
+    {
+        if (IsConnected || IsConnecting) return;
+        IsConnecting = true;
+        StateHasChanged();
+
+        try
+        {
+            _cts = new CancellationTokenSource();
+            await ChatClient.StartAsync(_cts.Token);
+
+            // start background reader
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await foreach (var msg in ChatClient.ReceiveAllAsync().WithCancellation(_cts.Token))
+                    {
+                        Messages.Add(msg);
+                        StateHasChanged();
+                    }
+                }
+                catch (OperationCanceledException) { }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Receive loop error: {ex.Message}");
+                }
+                finally
+                {
+                    // cleanup on disconnect
+                    try { _cts?.Dispose(); } catch { }
+                    _cts = null;
+                    IsConnecting = false;
+                    StateHasChanged();
+                }
+            }, _cts.Token);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Connect failed: {ex.Message}");
+            try { _cts?.Dispose(); } catch { }
+            _cts = null;
+        }
+        finally
+        {
+            IsConnecting = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task Send()
+    {
+        if (string.IsNullOrWhiteSpace(CurrentText)) return;
+
+        if (!IsConnected)
+        {
+            await Connect();
+            // if still not connected, abort
+            if (!IsConnected) return;
+        }
+
+        IsSending = true;
+        StateHasChanged();
+        var text = CurrentText;
+        try
+        {
+            await ChatClient.SendAsync(User, text);
+            CurrentText = string.Empty;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Send failed: {ex.Message}");
+        }
+        finally
+        {
+            IsSending = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task HandleKey(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await Send();
+        }
+    }
+}

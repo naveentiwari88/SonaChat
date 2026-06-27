@@ -1,0 +1,93 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "SonaChat.Web/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.22.0",
+          "Grpc.Net.Client": "2.56.0"
+        },
+        "runtime": {
+          "SonaChat.Web.dll": {}
+        }
+      },
+      "Google.Protobuf/3.22.0": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.22.0.0",
+            "fileVersion": "3.22.0.0"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.56.0": {
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.56.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.56.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.56.0"
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.56.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.56.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.56.0"
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.56.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SonaChat.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Protobuf/3.22.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UE1TRMrBBBmnA8xbqzTvX4sSwn+2W/Xxrs/v5Aws/7C8RD6fY6STi1eAnCu7Ez93oHcPdpyStGnFel/aIB407Q==",
+      "path": "google.protobuf/3.22.0",
+      "hashPath": "google.protobuf.3.22.0.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.56.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9owvft0MG5ZKFNdkNvpF2ePEs/Ggg1UgByQ0Dpubf1r95FyHV9Xit27+9pgE6/CodB0Ij0VfrB+5wJ+6ssJ3Lw==",
+      "path": "grpc.core.api/2.56.0",
+      "hashPath": "grpc.core.api.2.56.0.nupkg.sha512"
+    },
+    "Grpc.Net.Client/2.56.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SVVzApBpESvYJB9x31t3TWqj+9Earw1sG6PUgCGY/jh4lPA+y3WNru7qI4KTIBjerJR9+p4MlRKxZbnCCBfkRg==",
+      "path": "grpc.net.client/2.56.0",
+      "hashPath": "grpc.net.client.2.56.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.56.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ajflN6MVJC3Nr1KBkqQ7X8nBYwAZredrodVfdtFqh8lltuYg8reosIOAOQtd0Qnxvw9DrIqg4h4VO80H0RND3Q==",
+      "path": "grpc.net.common/2.56.0",
+      "hashPath": "grpc.net.common.2.56.0.nupkg.sha512"
+    }
+  }
+}

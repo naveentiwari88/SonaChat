@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SonaChat.GrpcService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+700daf2d7ee696ca76944bc48a2174c6257e44cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SonaChat.GrpcService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SonaChat.GrpcService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

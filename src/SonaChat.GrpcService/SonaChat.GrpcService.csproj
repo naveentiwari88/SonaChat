@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <Protobuf Include="..\protos\sonachat.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\calculator.proto" GrpcServices="Server" />
   </ItemGroup>
 </Project>

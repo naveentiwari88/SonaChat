@@ -33,4 +33,5 @@ E:\Projects\SonaChat\src\SonaChat.GrpcService\obj\Debug\net10.0\refint\SonaChat.
 E:\Projects\SonaChat\src\SonaChat.GrpcService\obj\Debug\net10.0\SonaChat.GrpcService.pdb
 E:\Projects\SonaChat\src\SonaChat.GrpcService\obj\Debug\net10.0\SonaChat.GrpcService.genruntimeconfig.cache
 E:\Projects\SonaChat\src\SonaChat.GrpcService\obj\Debug\net10.0\ref\SonaChat.GrpcService.dll
+E:\Projects\SonaChat\src\SonaChat.GrpcService\obj\Debug\net10.0\SonaChat.GrpcService.sourcelink.json
 E:\Projects\SonaChat\src\SonaChat.GrpcService\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -38,3 +38,4 @@ E:\Projects\SonaChat\src\SonaChat.Web\obj\Debug\net10.0\SonaChat.Web.pdb
 E:\Projects\SonaChat\src\SonaChat.Web\obj\Debug\net10.0\SonaChat.Web.genruntimeconfig.cache
 E:\Projects\SonaChat\src\SonaChat.Web\obj\Debug\net10.0\ref\SonaChat.Web.dll
 E:\Projects\SonaChat\src\SonaChat.Web\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+E:\Projects\SonaChat\src\SonaChat.Web\obj\Debug\net10.0\SonaChat.Web.sourcelink.json

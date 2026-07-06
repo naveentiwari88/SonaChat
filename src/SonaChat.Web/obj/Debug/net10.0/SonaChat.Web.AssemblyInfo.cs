@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SonaChat.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0cd19fe722ff2ab624f59fe64b5f481facd64e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SonaChat.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SonaChat.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -109,3 +109,4 @@ E:\Projects\SonaChat\tests\SonaChat.GrpcService.Tests\obj\Debug\net10.0\refint\S
 E:\Projects\SonaChat\tests\SonaChat.GrpcService.Tests\obj\Debug\net10.0\SonaChat.GrpcService.Tests.pdb
 E:\Projects\SonaChat\tests\SonaChat.GrpcService.Tests\obj\Debug\net10.0\SonaChat.GrpcService.Tests.genruntimeconfig.cache
 E:\Projects\SonaChat\tests\SonaChat.GrpcService.Tests\obj\Debug\net10.0\ref\SonaChat.GrpcService.Tests.dll
+E:\Projects\SonaChat\tests\SonaChat.GrpcService.Tests\obj\Debug\net10.0\SonaChat.GrpcService.Tests.sourcelink.json

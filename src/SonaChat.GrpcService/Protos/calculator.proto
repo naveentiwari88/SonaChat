@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package sonachat.calculator.v1;
+
+option csharp_namespace = "SonaChat.GrpcService.Protos";
+
+// CalculatorService provides basic arithmetic operations.
+service CalculatorService {
+  // Adds two numbers and returns the sum.
+  rpc Add(AddRequest) returns (AddResponse);
+}
+
+// Request for the Add RPC containing two operands.
+message AddRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// Response for the Add RPC containing the computed sum.
+message AddResponse {
+  double result = 1;
+}

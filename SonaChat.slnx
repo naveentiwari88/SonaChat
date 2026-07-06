@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/SonaChat.GrpcClient/SonaChat.GrpcClient.csproj" />
     <Project Path="src/SonaChat.GrpcService/SonaChat.GrpcService.csproj" />
     <Project Path="src/SonaChat.Web/SonaChat.Web.csproj" />
   </Folder>
